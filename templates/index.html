@@ -1,62 +1,241 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Vignesh Thangaraj | Cloud Engineer | Linux | DevOps</title>
+    <title>Vignesh Thangaraj | Cloud Engineer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <style>
-        body {
-            font-family: Arial;
-            background: #f4f6f8;
+        * {
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
         }
+
+        body {
+            background: linear-gradient(135deg,#0f172a,#1e293b);
+            color: #e2e8f0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            font-weight: 400;
+            color: #cbd5f5;
+        }
+
         .card {
-            background: #F8FAFC;
-            padding: 20px;
-            margin-bottom: 20px;
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            transition: 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        h3 {
+            color: #38bdf8;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        li {
+            padding: 5px 0;
+        }
+
+        .skill-box {
+            background: #0ea5e9;
+            padding: 12px 18px;
+            margin-top: 12px;
             border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .skill-box:hover {
+            background: #0284c7;
+        }
+
+        .skill-content {
+            display: none;
+            padding: 12px 15px;
+            margin-top: 8px;
+            background: #0f172a;
+            border-radius: 8px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #94a3b8;
         }
     </style>
 </head>
 
 <body>
 
-<div class="card">
-    <h1>Vignesh Thangaraj</h1>
-    <h2>Cloud Engineer</h2>
-    <p><strong>Organization:</strong> Precision Techserve Pvt Ltd</p>
+<div class="container">
+
+    <!-- HERO -->
+    <div class="hero">
+        <h1>Vignesh Thangaraj</h1>
+        <h2>Cloud Engineer | AWS | Linux | DevOps</h2>
+        <p style="margin-top:10px;color:#94a3b8;">
+            Precision Techserve Pvt Ltd
+        </p>
+    </div>
+
+    <!-- ABOUT -->
+    <div class="card">
+        <h3>About Me</h3>
+        <p>
+            Results-driven Cloud Engineer with strong expertise in AWS infrastructure,
+            Linux system administration, and DevOps automation. Experienced in designing
+            scalable, secure, and highly available cloud environments and managing
+            enterprise production workloads.
+        </p>
+    </div>
+
+    <!-- SKILLS + EXPERIENCE -->
+    <div class="card">
+        <h3>Technical Skills & Experience</h3>
+
+        <!-- CLOUD -->
+        <div class="skill-box" onclick="toggleSkill('cloud')">
+            ☁ Cloud (AWS)
+        </div>
+        <div id="cloud" class="skill-content">
+            <p><strong>Skills:</strong></p>
+            <ul>
+                <li>EC2, VPC, IAM, ALB, Auto Scaling</li>
+                <li>RDS, S3, ECS, EKS</li>
+                <li>CloudWatch, Route 53</li>
+            </ul>
+
+            <p><strong>Experience:</strong></p>
+            <ul>
+                <li>Managed 200+ AWS accounts</li>
+                <li>Designed highly available production architectures</li>
+                <li>CI/CD deployment using ECS</li>
+                <li>Monitoring and alerting using CloudWatch</li>
+            </ul>
+        </div>
+
+        <!-- LINUX -->
+        <div class="skill-box" onclick="toggleSkill('linux')">
+            🐧 Linux Administration
+        </div>
+        <div id="linux" class="skill-content">
+            <p><strong>Skills:</strong></p>
+            <ul>
+                <li>RHEL, Ubuntu, Amazon Linux</li>
+                <li>LVM, Security Hardening</li>
+                <li>Patching, Log Analysis</li>
+            </ul>
+
+            <p><strong>Experience:</strong></p>
+            <ul>
+                <li>Administered 200+ Linux servers</li>
+                <li>Configured NGINX / Apache</li>
+                <li>Performance tuning and troubleshooting</li>
+                <li>Incident handling and RCA</li>
+            </ul>
+        </div>
+
+        <!-- AUTOMATION -->
+        <div class="skill-box" onclick="toggleSkill('automation')">
+            ⚙ Infrastructure & Automation
+        </div>
+        <div id="automation" class="skill-content">
+            <p><strong>Skills:</strong></p>
+            <ul>
+                <li>AWS CloudFormation</li>
+                <li>Python</li>
+                <li>Bash scripting</li>
+                <li>CI/CD pipelines</li>
+            </ul>
+
+            <p><strong>Experience:</strong></p>
+            <ul>
+                <li>Automated infrastructure provisioning</li>
+                <li>Built CI/CD using CodePipeline & CodeBuild</li>
+                <li>Reduced manual deployments</li>
+            </ul>
+        </div>
+
+        <!-- SECURITY -->
+        <div class="skill-box" onclick="toggleSkill('security')">
+            🔐 Security & Reliability
+        </div>
+        <div id="security" class="skill-content">
+            <p><strong>Skills:</strong></p>
+            <ul>
+                <li>IAM policies & roles</li>
+                <li>WAF, GuardDuty, Security Hub</li>
+                <li>KMS, Certificate Manager</li>
+            </ul>
+
+            <p><strong>Experience:</strong></p>
+            <ul>
+                <li>Implemented least privilege access</li>
+                <li>Resolved security vulnerabilities</li>
+                <li>Configured monitoring and alerting</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ROLES -->
+    <div class="card">
+        <h3>Roles & Responsibilities</h3>
+        <ul>
+            <li>Deploy scalable AWS infrastructure</li>
+            <li>Automate deployments</li>
+            <li>Manage CI/CD pipelines</li>
+            <li>Monitor system health</li>
+            <li>Ensure security compliance</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        © 2026 Vignesh Thangaraj | Cloud Engineer Portfolio
+    </div>
+
 </div>
 
-<div class="card">
-    <h2>About Me</h2>
-    <p>
-    Cloud Engineer specializing in AWS infrastructure, Linux administration,
-    and DevOps automation. Experienced in building scalable and secure cloud environments.
-    </p>
-</div>
+<script>
+function toggleSkill(id) {
+    let section = document.getElementById(id);
 
-<div class="card">
-    <h2>Skills</h2>
-    <ul>
-        <li>AWS Cloud</li>
-        <li>Linux Administration</li>
-        <li>Docker & Containers</li>
-        <li>ECS & ECR</li>
-        <li>CI/CD Automation</li>
-        <li>Monitoring & Logging</li>
-    </ul>
-</div>
-
-<div class="card">
-    <h2>Roles & Responsibilities</h2>
-    <ul>
-        <li>Deploy cloud infrastructure</li>
-        <li>Manage CI/CD pipelines</li>
-        <li>Automate deployments</li>
-        <li>Monitor system health</li>
-        <li>Manage security & access</li>
-    </ul>
-</div>
+    if (section.style.display === "block") {
+        section.style.display = "none";
+    } else {
+        section.style.display = "block";
+    }
+}
+</script>
 
 </body>
 </html>
